@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mohamad Kaif Khan — Full Stack Web Developer</title>
+<meta name="description" content="Portfolio of Mohamad Kaif Khan, Full Stack Web Developer." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:'#f4f6fb', muted:'#8891ab', bg:'#0b0e1a', bgalt:'#10152a',
+          gold:'#f5a623', teal:'#3ed9c7'
+        },
+        fontFamily: {
+          display:['"Space Grotesk"','sans-serif'],
+          body:['Inter','sans-serif'],
+          mono:['"JetBrains Mono"','monospace']
+        }
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-body">
+
+<div id="loader"><div class="load-ring"></div><div class="loader-label">LOADING PORTFOLIO…</div></div>
+
+<div id="bg-layer">
+  <div class="glow-orb gold" style="width:460px;height:460px;top:-120px;left:-100px;"></div>
+  <div class="glow-orb teal" style="width:500px;height:500px;bottom:-160px;right:-140px;"></div>
+  <svg width="100%" height="100%" preserveAspectRatio="none">
+    <defs>
+      <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+        <path d="M60 0H0V60" fill="none" stroke="#3a4a6b" stroke-width="0.5"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#grid)" />
+  </svg>
+  <div id="particle-field"></div>
+  <div class="noise-vignette"></div>
+</div>
+
+<header id="nav">
+  <div class="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-16">
+    <a href="#home" class="flex items-center gap-3">
+      <span class="logo-mark">MK</span>
+      <span class="font-display text-lg font-semibold">Kaif<span style="color:var(--gold);">.</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 font-mono text-[0.78rem] uppercase tracking-wider">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+    <a href="#contact" class="hidden md:inline-flex btn btn-primary !py-2 !px-4 text-sm">Hire Me</a>
+    <button id="menu-btn" class="md:hidden text-ink" aria-label="Toggle menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="md:hidden px-5 pb-4 flex flex-col gap-4 font-mono text-sm uppercase tracking-wider">
+    <a href="#home" class="nav-link">Home</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#experience" class="nav-link">Experience</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#education" class="nav-link">Education</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section id="home" class="min-h-screen flex flex-col justify-center pt-28 pb-0 px-5 md:px-8">
+  <div class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-14 items-center flex-1">
+    <div>
+      <p class="eyebrow reveal">Full Stack Web Developer</p>
+      <h1 class="font-display font-bold mt-3 reveal reveal-delay-1" style="font-size:clamp(2.4rem,6vw,4.2rem); line-height:1.05;">
+        Hi, I'm<br/>
+        <span class="gradient-text">Mohamad Kaif</span><br/>
+        Khan
+      </h1>
+      <p class="mt-5 text-muted text-lg max-w-md reveal reveal-delay-2 font-mono" style="min-height:1.6em;">
+        <span id="typewriter-text"></span><span class="type-cursor">|</span>
+      </p>
+      <div class="mt-4 reveal reveal-delay-2">
+        <span class="defence-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6.6L22 9.2l-5.5 4.6L18.2 21 12 17.1 5.8 21l1.7-7.2L2 9.2l7.4-0.6L12 2z"/></svg>
+          Defence Aspirant · SSB Screened Twice
+        </span>
+      </div>
+      <div class="mt-8 flex flex-wrap gap-4 reveal reveal-delay-3">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+        <a href="assets/resume.pdf" download="Mohammad_Kaif_Khan_Resume.pdf" class="btn btn-ghost underline decoration-dotted underline-offset-4">Download Resume</a>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="avatar-stage">
+        <div class="avatar-ring"></div>
+        <div class="avatar-ring r2"></div>
+        <div class="avatar-photo">
+          <img src="assets/profile.jpg" alt="Mohamad Kaif Khan" style="object-position: center 20%;" />
+        </div>
+        <span class="avatar-badge">OPEN TO WORK</span>
+      </div>
+      <div class="flex items-center justify-center gap-2 mt-5 text-muted text-sm font-mono">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--teal); flex-shrink:0;"><path d="M12 21s-7-7.2-7-12a7 7 0 0 1 14 0c0 4.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <span>Noida, Uttar Pradesh</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee-wrap mt-16">
+    <div class="marquee-track">
+      <span class="marquee-item"><span class="dot"></span><strong>React</strong></span>
+      <span class="marquee-item"><span class="dot"></span><strong>Node.js</strong></span>
+      <span class="marquee-item"><span class="dot"></span><strong>JavaScript</strong></span>
+      <span class="marquee-item"><span class="dot"></span><strong>Tailwind CSS</strong></span>
+      <span class="marquee-item"><span class="dot"></span><strong>MongoDB</strong></span>
+      <span class="marquee-item"><span class="dot"></span><strong>DSA &amp; Problem Solving</strong></span>
+      <span class="marquee-item"><span class="dot"></span><strong>REST APIs</strong></span>
+      <!-- duplicate for seamless loop -->
+      <span class="marquee-item"><span class="dot"></span><strong>React</strong></span>
+      <span class="marquee-item"><span class="dot"></span><strong>Node.js</strong></span>
+      <span class="marquee-item"><span class="dot"></span><strong>JavaScript</strong></span>
+      <span class="marquee-item"><span class="dot"></span><strong>Tailwind CSS</strong></span>
+      <span class="marquee-item"><span class="dot"></span><strong>MongoDB</strong></span>
+      <span class="marquee-item"><span class="dot"></span><strong>DSA &amp; Problem Solving</strong></span>
+      <span class="marquee-item"><span class="dot"></span><strong>REST APIs</strong></span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-24 px-5 md:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-14 items-start">
+      <div class="reveal">
+        <p class="eyebrow">About Me</p>
+        <h2 class="section-title mt-3">Building things,<br/>one problem at a time.</h2>
+        <p class="mt-6 text-muted leading-relaxed">
+          I'm an aspiring Full Stack Web Developer who enjoys turning ideas into fast, interactive, and reliable
+          web applications. I'm drawn to the problem-solving side of engineering as much as the craft of building
+          clean interfaces — figuring out how a system should behave is half the fun, and shipping something people
+          can actually use is the other half.
+        </p>
+        <p class="mt-4 text-muted leading-relaxed">
+          I spend a good part of my time learning modern web technologies and sharpening my Data Structures and
+          Algorithms skills, treating every project and every problem solved as one more rep toward becoming a
+          stronger engineer.
+        </p>
+        <p class="mt-4 text-muted leading-relaxed">
+          Alongside engineering, I'm also a defence aspirant — I've been screened for the Services Selection
+          Board (SSB) twice through a competitive selection process. That pursuit has shaped how I approach
+          everything else: discipline, composure under pressure, and a bias toward seeing things through, whether
+          that's a training round or a hard bug.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-5">
+        <div class="stat-card reveal"><div class="stat-num" style="color:var(--gold);">150+</div><p class="text-sm text-muted mt-1">Coding Questions Solved on Various Platforms</p></div>
+        <div class="stat-card reveal reveal-delay-1"><div class="stat-num" style="color:var(--teal);">Full Stack</div><p class="text-sm text-muted mt-1">Development</p></div>
+        <div class="stat-card reveal reveal-delay-2"><div class="stat-num" style="color:var(--gold);">Multiple</div><p class="text-sm text-muted mt-1">Projects Built</p></div>
+        <div class="stat-card reveal reveal-delay-3"><div class="stat-num" style="color:var(--teal);">Always</div><p class="text-sm text-muted mt-1">Continuous Learner</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-24 px-5 md:px-8" style="background:linear-gradient(180deg,transparent,rgba(255,255,255,0.015),transparent);">
+  <div class="max-w-7xl mx-auto">
+    <p class="eyebrow reveal text-center">My Arsenal</p>
+    <h2 class="section-title mt-3 text-center reveal">Skills &amp; Tools</h2>
+    <div class="mt-14 grid md:grid-cols-2 gap-10">
+      <div>
+        <h3 class="font-mono text-sm tracking-widest text-muted uppercase mb-5 reveal">Frontend</h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="skill-card reveal" style="--pct:88%"><div class="flex items-center justify-between mb-2"><span class="font-semibold">HTML5</span><span class="font-mono text-xs text-muted">88%</span></div><div class="skill-bar-track"><div class="skill-bar-fill"></div></div></div>
+          <div class="skill-card reveal reveal-delay-1" style="--pct:85%"><div class="flex items-center justify-between mb-2"><span class="font-semibold">CSS3</span><span class="font-mono text-xs text-muted">85%</span></div><div class="skill-bar-track"><div class="skill-bar-fill"></div></div></div>
+          <div class="skill-card reveal reveal-delay-2" style="--pct:82%"><div class="flex items-center justify-between mb-2"><span class="font-semibold">JavaScript</span><span class="font-mono text-xs text-muted">82%</span></div><div class="skill-bar-track"><div class="skill-bar-fill"></div></div></div>
+          <div class="skill-card reveal reveal-delay-3" style="--pct:75%"><div class="flex items-center justify-between mb-2"><span class="font-semibold">React</span><span class="font-mono text-xs text-muted">75%</span></div><div class="skill-bar-track"><div class="skill-bar-fill"></div></div></div>
+          <div class="skill-card reveal reveal-delay-4" style="--pct:78%"><div class="flex items-center justify-between mb-2"><span class="font-semibold">Tailwind CSS</span><span class="font-mono text-xs text-muted">78%</span></div><div class="skill-bar-track"><div class="skill-bar-fill"></div></div></div>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-mono text-sm tracking-widest text-muted uppercase mb-5 reveal">Backend</h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="skill-card reveal" style="--pct:70%"><div class="flex items-center justify-between mb-2"><span class="font-semibold">Node.js</span><span class="font-mono text-xs text-muted">70%</span></div><div class="skill-bar-track"><div class="skill-bar-fill"></div></div></div>
+        </div>
+        <h3 class="font-mono text-sm tracking-widest text-muted uppercase mb-5 mt-8 reveal">Learning Next</h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="skill-card skill-soon reveal"><span class="font-semibold text-sm">Express.js</span></div>
+          <div class="skill-card skill-soon reveal reveal-delay-1"><span class="font-semibold text-sm">MongoDB</span></div>
+          <div class="skill-card skill-soon reveal reveal-delay-2"><span class="font-semibold text-sm">Git &amp; GitHub</span></div>
+          <div class="skill-card skill-soon reveal reveal-delay-3"><span class="font-semibold text-sm">REST APIs</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-track reverse">
+    <span class="marquee-item">FULL STACK DEVELOPER</span>
+    <span class="marquee-item" style="color:var(--gold);">★</span>
+    <span class="marquee-item">PROBLEM SOLVER</span>
+    <span class="marquee-item" style="color:var(--teal);">★</span>
+    <span class="marquee-item">OPEN TO OPPORTUNITIES</span>
+    <span class="marquee-item" style="color:var(--gold);">★</span>
+    <span class="marquee-item">FULL STACK DEVELOPER</span>
+    <span class="marquee-item" style="color:var(--teal);">★</span>
+    <span class="marquee-item">PROBLEM SOLVER</span>
+    <span class="marquee-item" style="color:var(--gold);">★</span>
+    <span class="marquee-item">OPEN TO OPPORTUNITIES</span>
+    <span class="marquee-item" style="color:var(--teal);">★</span>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="py-24 px-5 md:px-8">
+  <div class="max-w-4xl mx-auto">
+    <p class="eyebrow reveal text-center">Work Experience</p>
+    <h2 class="section-title mt-3 reveal text-center">Experience</h2>
+
+    <div class="mt-14">
+      <div class="exp-card reveal">
+        <div class="exp-logo">YI</div>
+        <div>
+          <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <h3 class="font-display text-xl font-semibold">Junior Web Developer</h3>
+            <span class="exp-duration">July 2026 – August 30, 2026</span>
+          </div>
+          <p class="text-sm mt-1" style="color:var(--gold);">YUVA Intern · Virtual Internship</p>
+          <p class="text-sm text-muted mt-3 leading-relaxed">
+            Completed a virtual internship as a Junior Web Developer with YUVA Intern, working remotely on
+            frontend development tasks. Built and refined responsive web interfaces using HTML, CSS, and
+            JavaScript, practiced applying React fundamentals to real assignments, and collaborated with a
+            remote team while following task deadlines and review feedback — strengthening both my technical
+            skills and my ability to work independently in a remote setup.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="tech-pill">HTML</span><span class="tech-pill">CSS</span><span class="tech-pill">JavaScript</span><span class="tech-pill">React</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-24 px-5 md:px-8">
+  <div class="max-w-7xl mx-auto">
+    <p class="eyebrow reveal text-center">Selected Work</p>
+    <h2 class="section-title mt-3 text-center reveal">Projects</h2>
+
+    <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Portfolio Website -->
+      <div class="project-card reveal">
+        <div class="project-thumb">
+          <svg viewBox="0 0 200 120"><g stroke="#f5a623" stroke-width="1" fill="none"><rect x="35" y="25" width="130" height="70" rx="6"/><path d="M35 42 L165 42"/><circle cx="45" cy="33" r="2.5"/><circle cx="53" cy="33" r="2.5"/></g></svg>
+          <span class="font-display text-2xl font-bold text-muted/40 relative">PORTFOLIO</span>
+        </div>
+        <div class="p-6">
+          <h3 class="font-display text-xl font-semibold">Portfolio Website</h3>
+          <p class="text-sm text-muted mt-2 leading-relaxed">
+            This personal portfolio itself — a fully responsive, highly animated site built to showcase my
+            projects, skills, and experience, featuring scroll-triggered animations, a running marquee, and an
+            interactive contact form connected to email delivery.
+          </p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="tech-pill">HTML</span><span class="tech-pill">JavaScript</span><span class="tech-pill">Tailwind CSS</span>
+          </div>
+          <div class="flex gap-4 mt-5">
+            <a href="#" class="btn btn-outline !py-2 !px-4 text-xs">Live Demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Placement Buddy -->
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-thumb">
+          <svg viewBox="0 0 200 120"><g stroke="#f5a623" stroke-width="1" fill="none"><rect x="50" y="30" width="100" height="60" rx="8"/><path d="M70 55 L90 70 L130 40"/></g></svg>
+          <span class="font-display text-2xl font-bold text-muted/40 relative">AI PLACEMENT BUDDY</span>
+        </div>
+        <div class="p-6">
+          <h3 class="font-display text-xl font-semibold">AI Placement Buddy</h3>
+          <p class="text-sm text-muted mt-2 leading-relaxed">
+            An AI-powered placement preparation platform that helps college students practice aptitude, DSA,
+            coding rounds, core CS subjects, and technical/HR interviews — with personalized performance
+            analysis and company-specific prep.
+          </p>
+          <div class="mt-3 space-y-1">
+            <div class="feature-tag"><span class="dot"></span><span>AI-generated mock interviews with downloadable PDF reports</span></div>
+            <div class="feature-tag"><span class="dot"></span><span>Smart study planner based on target company and current score</span></div>
+            <div class="feature-tag"><span class="dot"></span><span>Progress streaks and weak-topic alerts</span></div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="tech-pill">React</span><span class="tech-pill">Node.js</span><span class="tech-pill">Express</span><span class="tech-pill">MongoDB</span><span class="tech-pill">Gemini AI</span>
+          </div>
+          <div class="flex gap-4 mt-5">
+            <a href="https://ai-placement-buddy.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline !py-2 !px-4 text-xs">Live Demo</a>
+            <a href="https://github.com/kaifglitch/ai-placement-buddy.git" target="_blank" rel="noopener noreferrer" class="btn btn-ghost !py-2 !px-4 text-xs">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Driven Railway Twin -->
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-thumb">
+          <svg viewBox="0 0 200 120"><g stroke="#9caf6b" stroke-width="1" fill="none"><path d="M10 90 L190 90 M30 90 L30 60 L170 60 L170 90 M60 60 L60 30 L140 30 L140 60"/><circle cx="100" cy="45" r="8"/></g></svg>
+          <span class="font-display text-2xl font-bold text-muted/40 relative">RAILWAY TWIN</span>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center justify-between gap-2">
+            <h3 class="font-display text-xl font-semibold">AI Driven Railway Twin</h3>
+          </div>
+          <span class="status-badge mt-2"><span class="pulse-dot"></span>In Progress · Expected March 2027</span>
+          <p class="text-sm text-muted mt-3 leading-relaxed">
+            An AI-driven digital twin for railway assets that supports maintenance monitoring and data-driven
+            decision making, aimed at early fault detection and predictive maintenance before issues become
+            critical.
+          </p>
+          <div class="mt-3 space-y-1">
+            <div class="feature-tag"><span class="dot"></span><span>Digital representation of railway assets and maintenance conditions</span></div>
+            <div class="feature-tag"><span class="dot"></span><span>AI/ML-driven early fault detection and predictive maintenance</span></div>
+          </div>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="tech-pill">Python</span><span class="tech-pill">AI/ML</span><span class="tech-pill">Data Processing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-3 border-dashed flex items-center justify-center min-h-[260px]">
+        <div class="text-center p-6">
+          <div class="font-display text-4xl text-muted/50">+</div>
+          <p class="text-sm text-muted mt-2">More projects coming soon</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="py-24 px-5 md:px-8" style="background:linear-gradient(180deg,transparent,rgba(255,255,255,0.015),transparent);">
+  <div class="max-w-4xl mx-auto">
+    <p class="eyebrow reveal text-center">The Journey</p>
+    <h2 class="section-title mt-3 reveal text-center">Education</h2>
+    <div class="relative mt-16">
+      <div class="timeline-line"></div>
+      <div class="space-y-14">
+        <div class="relative md:grid md:grid-cols-2 md:gap-10 items-center reveal">
+          <div class="flex md:justify-end md:pr-10 pl-12 md:pl-0">
+            <div class="timeline-card md:max-w-sm w-full"><p class="font-mono text-xs" style="color:var(--gold);">10th Standard</p><h4 class="font-display text-lg font-semibold mt-1">Army Public School</h4><p class="text-sm text-muted mt-1">Prayagraj, Uttar Pradesh</p></div>
+          </div>
+          <div class="absolute left-[13px] md:left-1/2 top-1 md:-translate-x-1/2"><div class="timeline-dot"></div></div>
+          <div class="hidden md:block"></div>
+        </div>
+        <div class="relative md:grid md:grid-cols-2 md:gap-10 items-center reveal reveal-delay-1">
+          <div class="hidden md:block"></div>
+          <div class="absolute left-[13px] md:left-1/2 top-1 md:-translate-x-1/2"><div class="timeline-dot"></div></div>
+          <div class="flex md:justify-start md:pl-10 pl-12">
+            <div class="timeline-card md:max-w-sm w-full"><p class="font-mono text-xs" style="color:var(--teal);">12th Standard</p><h4 class="font-display text-lg font-semibold mt-1">Army Public School</h4><p class="text-sm text-muted mt-1">Prayagraj, Uttar Pradesh</p></div>
+          </div>
+        </div>
+        <div class="relative md:grid md:grid-cols-2 md:gap-10 items-center reveal reveal-delay-2">
+          <div class="flex md:justify-end md:pr-10 pl-12 md:pl-0">
+            <div class="timeline-card md:max-w-sm w-full"><p class="font-mono text-xs" style="color:var(--gold);">Bachelor of Technology (B.Tech)</p><h4 class="font-display text-lg font-semibold mt-1">Information Technology</h4><p class="text-sm text-muted mt-1">J.S.S. Academy of Technical Education, Noida</p></div>
+          </div>
+          <div class="absolute left-[13px] md:left-1/2 top-1 md:-translate-x-1/2"><div class="timeline-dot"></div></div>
+          <div class="hidden md:block"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24 px-5 md:px-8">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center">
+      <p class="eyebrow reveal">Get In Touch</p>
+      <h2 class="section-title mt-3 reveal">Contact Me</h2>
+      <p class="text-muted mt-4 reveal">Have a project in mind or just want to say hi? Reach out below.</p>
+    </div>
+
+    <div class="mt-14 grid lg:grid-cols-2 gap-14 items-start">
+
+      <div>
+        <div class="flex items-center gap-2 text-sm reveal mb-6">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--teal); flex-shrink:0;"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg>
+          <a href="mailto:kaifwork2731@gmail.com" class="text-muted hover:text-ink transition-colors">kaifwork2731@gmail.com</a>
+        </div>
+        <form id="contact-form" class="reveal" novalidate>
+          <div id="form-status"></div>
+          <div class="grid md:grid-cols-2 gap-5">
+            <div class="field-group"><input type="text" id="cf-name" class="field-input" placeholder="Your Name" autocomplete="name" /><p class="field-error">Please enter your name.</p></div>
+            <div class="field-group"><input type="email" id="cf-email" class="field-input" placeholder="Your Email" autocomplete="email" /><p class="field-error">Please enter a valid email address.</p></div>
+          </div>
+          <div class="field-group mt-5"><input type="text" id="cf-subject" class="field-input" placeholder="Subject" /><p class="field-error">Please add a subject.</p></div>
+          <div class="field-group mt-5"><textarea id="cf-message" rows="5" class="field-input" placeholder="Your Message"></textarea><p class="field-error">Please write a short message.</p></div>
+          <button type="submit" class="btn btn-primary mt-6 w-full md:w-auto">Send Message</button>
+        </form>
+      </div>
+
+      <div>
+        <p class="eyebrow reveal">Elsewhere</p>
+        <h3 class="font-display text-2xl font-semibold mt-2 reveal">You Can Also Connect Me On</h3>
+        <div class="mt-6 space-y-4">
+
+          <a href="https://www.linkedin.com/in/mohammad-kaif-khan-745264279" target="_blank" rel="noopener noreferrer" class="connect-card reveal">
+            <span class="connect-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-6.94c0-1.66-.03-3.79-2.31-3.79-2.32 0-2.68 1.81-2.68 3.67V23h-4V8z"/></svg></span>
+            <span>
+              <span class="connect-name block">LinkedIn</span>
+              <span class="connect-handle block">mohammad-kaif-khan-745264279</span>
+            </span>
+            <svg class="connect-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+          </a>
+
+          <a href="https://www.instagram.com/pathan._kaif_?stkn=MXR0emVxeGZ5MTNodg==" target="_blank" rel="noopener noreferrer" class="connect-card reveal reveal-delay-1">
+            <span class="connect-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.9 1.11 1.15 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77A4.9 4.9 0 0 1 5.45.53C6.09.28 6.82.11 7.88.06 8.94.01 9.28 0 12 0zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4z" transform="translate(0,2)"/></svg></span>
+            <span>
+              <span class="connect-name block">Instagram</span>
+              <span class="connect-handle block">@pathan._kaif_</span>
+            </span>
+            <svg class="connect-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+          </a>
+
+          <a href="https://leetcode.com/u/kaif_khan_01/" target="_blank" rel="noopener noreferrer" class="connect-card reveal reveal-delay-2">
+            <span class="connect-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></span>
+            <span>
+              <span class="connect-name block">LeetCode</span>
+              <span class="connect-handle block">kaif_khan_01</span>
+            </span>
+            <svg class="connect-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+          </a>
+
+          <a href="https://github.com/kaifglitch" target="_blank" rel="noopener noreferrer" class="connect-card reveal reveal-delay-3">
+            <span class="connect-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1-.02-1.96-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.28-1.7-1.28-1.7-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.4-5.28 5.69.42.36.78 1.08.78 2.18 0 1.58-.02 2.85-.02 3.24 0 .3.2.66.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg></span>
+            <span>
+              <span class="connect-name block">GitHub</span>
+              <span class="connect-handle block">kaifglitch</span>
+            </span>
+            <svg class="connect-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+          </a>
+
+          <a href="https://wa.me/919450042629" target="_blank" rel="noopener noreferrer" class="connect-card reveal reveal-delay-4">
+            <span class="connect-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.34 4.99L2 22l5.2-1.36a9.9 9.9 0 0 0 4.84 1.24h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm0 18.2h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.08.81.82-3-.2-.31a8.23 8.23 0 1 1 6.96 3.83zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.66-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.44.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.42 1.02 2.59.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg></span>
+            <span>
+              <span class="connect-name block">WhatsApp</span>
+              <span class="connect-handle block">+91 94500 42629</span>
+            </span>
+            <svg class="connect-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pt-16 pb-8 px-5 md:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-3">
+          <span class="logo-mark" style="width:32px;height:32px;font-size:0.8rem;">MK</span>
+          <span class="font-display text-lg font-semibold">Mohamad Kaif Khan</span>
+        </div>
+        <p class="text-muted text-sm mt-1">Full Stack Web Developer</p>
+      </div>
+      <div class="flex gap-3">
+        <a href="#" class="social-icon" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1-.02-1.96-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.28-1.7-1.28-1.7-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.4-5.28 5.69.42.36.78 1.08.78 2.18 0 1.58-.02 2.85-.02 3.24 0 .3.2.66.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg></a>
+        <a href="#" class="social-icon" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-6.94c0-1.66-.03-3.79-2.31-3.79-2.32 0-2.68 1.81-2.68 3.67V23h-4V8z"/></svg></a>
+        <a href="#" class="social-icon" aria-label="X / Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.6-6.9L4 22H1l8.1-9.3L1 2h7.2l5.1 6.4L18.9 2zm-1.2 18h1.9L7.4 4H5.3l12.4 16z"/></svg></a>
+        <a href="mailto:kaifwork2731@gmail.com" class="social-icon" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v12H4z"/><path d="M4 6l8 7 8-7"/></svg></a>
+      </div>
+    </div>
+    <div class="mt-10 pt-6 border-t flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted" style="border-color:var(--line);">
+      <p>© <span id="year"></span> Mohamad Kaif Khan. All rights reserved.</p>
+      <p>Made with <span style="color:var(--gold);">❤</span> and code.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
